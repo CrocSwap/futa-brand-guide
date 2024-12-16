@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Exa:wght@100;300;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100;300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Mono:wght@100;300;400;500&display=swap');
+
+/* For simple theme change(special occasion), change portfolio and swap background. No need for a different color scheme*/
+:root {
+    --font-logo: 'Lexend Exa', sans-serif;
+    --font-family: 'Lexend Deca', sans-serif;
+    --roboto: 'Roboto Mono', monospace;
+    --mono: monospace, 'Lexend Deca' sans-serif;
+   /* subtract full height from navbar(56px) and footer(20px on desktop, 64 on mobile) */
+   --content-height: calc(100vh - 76px);
+   --content-height-mobile: calc(100svh - 120px);
+   /* font */
+   --title-ts: 0px 0px 150px rgba(242, 153, 74, 0.5),
+       0px 0px 100px rgba(242, 153, 74, 0.5),
+       0px 0px 30px rgba(242, 153, 74, 0.5),
+       0px 0px 20px rgba(242, 153, 74, 0.5),
+       0px 0px 10px rgba(242, 153, 74, 0.5),
+       0px 0px 3px rgba(242, 153, 74, 0.5);
+
+   --header1-size: 24px;
+   --header1-lh: 25px;
+
+   --header2-size: 18px;
+   --header2-lh: 22px;
+
+   --header-size: 16px;
+   --body-size: 12px;
+   --body-lh: 15px;
+
+   --mini-size: 10px;
+   --mini-lh: 12px;
+
+   /* colors */
+   --blur-bg: rgba(239, 178, 115, 0.5);
+   /* "accent1": "#AACFD1",
+   "accent2": "#5C6F72",
+   "accent3": "#5C6F72",
+   "text1": "#AACFD1",
+   "text2": "#939C9E",
+   "text3": "#4D5255",
+   "dark1": "#0D0F13",
+   "dark2": "#14161A",
+   "dark3": "#1B1E22",
+   "green": "#62F1B0",
+   "red": "#F16962",
+   "orange": "#F1B162" */
+
+   --text1: #AACFD1;
+   --text2: #939C9E;
+   --text3: #4D5255;
+
+   --dark1: #0D0F13;
+   --dark2: #14161A;
+   --dark3: #1B1E22;
+   --dark4: #171f22;
+   --accent1: #AACFD1;
+   --accent2: #5C6F72;
+   --accent3: #5C6F72;
+
+   --accent4: #71b5fc;
+   --accent5: #7be4ff;
+
+   --orange: #F1B162;
+   --green: #62F1B0;
+   --red: #F16962;
+
+   --positive: #62f1b0;
+   --negative: #f16962;
+
+   --other-green: #6bae52;
+   --other-red: #e75670;
+
+   /* border */
+   --color-border: 1px solid var(--accent1);
+   --border: #424649;
+   --border-radius: 0;
+   --swap-border: var(--title-gradient);
+   --grey-light-border: 1px solid var(--text2);
+   --navbar-border: transparent;
+   --dark-border: 0.2px solid #010101;
+
+   /* transitions */
+   --transition: all var(--animation-speed) ease-in-out;
+
+   /* animations */
+   --animation-speed: 300ms;
+
+   /* sizes */
+   --footer-height: 24px;
+
+   --font-logo: 'Fira Mono';
+   --font-family: 'Fira Mono';
+   --roboto: 'Fira Mono';
+   --mono: 'Fira Mono';
+
+   --scrollbar: none;
+   --scrollbar-track: transparent;
+   --scrollbar-color: transparent;
+   --scrollbar-thumb: linear-gradient(
+       0deg,
+       var(--accent1) 0%,
+       var(--accent5) 49.48%,
+       var(--accent1) 100%
+   );
+
+   --title-gradient: linear-gradient(
+       90deg,
+       #62ebf1 0%,
+       #7be4ff 49.48%,
+       #62ebf1 100%
+   );
+}
