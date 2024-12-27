@@ -1,6 +1,6 @@
+import image1 from '../../assets/images/section12FirstImage.svg';
+import image2 from '../../assets/images/section12SecondImage.svg';
 import styles from './FutaSection12.module.css';
-import image1 from '../../assets/images/Section12First.svg'
-import image2 from '../../assets/images/Section12Second.svg'
 export default function FutaSection12() {
   return (
     <div className={styles.container}>

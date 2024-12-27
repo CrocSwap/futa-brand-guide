@@ -1,4 +1,4 @@
-import section2 from '../assets/images/section2.png';
+import section2 from '../assets/images/section2Image.png';
 import ImageDisplay from '../components/ImageDisplay/ImageDisplay';
 import styles from './Sections.module.css';
 

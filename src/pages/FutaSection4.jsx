@@ -1,5 +1,5 @@
-import section4First from '../assets/images/section4First.svg';
-import section4Second from '../assets/images/section4Second.svg';
+import section4First from '../assets/images/section4FirstImage.svg';
+import section4Second from '../assets/images/section4SecondImage.svg';
 import ImageDisplay from '../components/ImageDisplay/ImageDisplay';
 import styles from './Sections.module.css';
 

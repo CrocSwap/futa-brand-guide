@@ -1,4 +1,4 @@
-import section7 from '../assets/images/section7.svg';
+import section7 from '../assets/images/section7Image.svg';
 import ImageDisplay from '../components/ImageDisplay/ImageDisplay';
 import styles from './Sections.module.css';
 
