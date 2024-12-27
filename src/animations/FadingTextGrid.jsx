@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
 import PropTypes from 'prop-types'; // Import PropTypes for validation
+import { useEffect } from 'react';
 import FadingText from './FadingText';
 import fadingTextData from './fadingTextData.json';
 
