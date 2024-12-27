@@ -1,9 +1,8 @@
 import PropTypes from 'prop-types'; // Import PropTypes
-import useMediaQuery from '../../hooks/useMediaQuery';
 import styles from './Footer.module.css';
 
 export default function Footer(props) {
-  const { scrollToSection, activeSection } = props;
+  const {  activeSection } = props;
   const titles = {
     0: { title: '' },
     1: { title: '' },
@@ -20,13 +19,8 @@ export default function Footer(props) {
   };
   const selectedTitle = titles[activeSection]?.title || '';
 
-  const sections = ['00', '01', '02', '03', '04'];
 
-  const handleNextSection = () => {
-    const nextIndex = (activeSection + 1) % sections.length;
-    scrollToSection(nextIndex);
-  };
-  const showMobileVersion = useMediaQuery('(max-width: 768px)');
+
 
   const futaText = (
     <div className={styles.centerSection}>
