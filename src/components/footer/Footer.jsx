@@ -45,7 +45,7 @@ export default function Footer(props) {
 
       <div className={styles.rightSection}>
               <div className={styles.numberList}>
-                  {activeSection === 0 && 'Last Updated:'}
+                  {/* {activeSection === 0 && 'Last Updated:'} */}
           {activeSection > 2 && activeSection < 10 ? '0' : ''}
           {activeSection > 2 && activeSection}
         </div>

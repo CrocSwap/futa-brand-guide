@@ -6,7 +6,7 @@ export default function FutaSection1() {
   return (
     <div className={styles.section1bg} >
 
-      <ImageDisplay image={section1image} />
+      <ImageDisplay image={section1image} zipDownload />
     </div>
   );
 }

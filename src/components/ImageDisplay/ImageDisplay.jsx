@@ -1,9 +1,73 @@
 import PropTypes from 'prop-types';
 import styles from './ImageDisplay.module.css';
 import { BsDownload } from 'react-icons/bs';
-
+import JSZip from 'jszip';
+import { saveAs } from 'file-saver';
+import fullLogo from '../../assets/images/section2Image.svg';
+import markColor from '../../assets/images/section3Image.svg';
+import markMonochrome01 from '../../assets/images/section4FirstImage.svg';
+import markMonochrome02 from '../../assets/images/section4SecondImage.svg';
+import wordMarkColor from '../../assets/images/section5Image.svg';
+import wordMarkMonochrome01 from '../../assets/images/section6FirstImage.svg';
+import wordMarkMonochrome02 from '../../assets/images/section6SecondImage.svg';
+import wordColor from '../../assets/images/section7Image.svg';
+import wordMonochrome01 from '../../assets/images/section8FirstImage.svg';
+import wordMonochrome02 from '../../assets/images/section8SecondImage.svg';
 export default function ImageDisplay(props) {
-  const { image, image2 } = props;
+  const { image, image2, zipDownload } = props;
+
+  const images = [
+    { name: 'fullLogo.svg', url: fullLogo },
+    { name: 'markColor.svg', url: markColor },
+    { name: 'markMonochrome01.svg', url: markMonochrome01 },
+    {
+      name: 'markMonochrome02.svg',
+      url: markMonochrome02,
+    },
+    {
+      name: 'wordMarkColor.svg',
+      url: wordMarkColor,
+    },
+    {
+      name: 'wordMarkMonochrome01.svg',
+      url: wordMarkMonochrome01,
+    },
+    {
+      name: 'wordMarkMonochrome02.svg',
+      url: wordMarkMonochrome02,
+    },
+    {
+      name: 'wordColor.svg',
+      url: wordColor,
+    },
+    {
+      name: 'wordMonochrome01.svg',
+      url: wordMonochrome01,
+    },
+    {
+      name: 'wordMonochrome02.svg',
+      url: wordMonochrome02,
+    },
+  ];
+
+  const downloadZip = async () => {
+    const zip = new JSZip();
+
+    for (const image of images) {
+      try {
+        const response = await fetch(image.url); // Fetch the imported image's URL
+        const blob = await response.blob();
+        zip.file(image.name, blob);
+      } catch (error) {
+        console.error(`Failed to load image ${image.name}:`, error);
+      }
+    }
+
+    zip.generateAsync({ type: 'blob' }).then((content) => {
+      saveAs(content, 'BrandKit.zip');
+    });
+  };
+
   // Function to download an image
   const downloadImage = (src, filename) => {
     // Create a temporary anchor element
@@ -58,7 +122,11 @@ export default function ImageDisplay(props) {
         <img src={image} alt='' />
         <button
           className={styles.downloadButton}
-          onClick={() => downloadImage(image, generateFilename(image))}
+          onClick={
+            zipDownload
+              ? () => downloadZip() // Pass a function reference
+              : () => downloadImage(image, generateFilename(image)) // Pass a function reference
+          }
         >
           download
           <BsDownload />
@@ -71,4 +139,5 @@ export default function ImageDisplay(props) {
 ImageDisplay.propTypes = {
   image: PropTypes.string.isRequired,
   image2: PropTypes.string.isRequired,
+  zipDownload: PropTypes.boolean,
 };
