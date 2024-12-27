@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'; // Import PropTypes for validation
 import { useEffect } from 'react';
 import FadingText from './FadingText';
-import fadingTextData from './fadingTextData.json';
+import fadingTextData from './FadingTextData.json';
 
 const FadingTextGrid = ({ onAnimationComplete, setShowMainContent }) => {
     useEffect(() => {
