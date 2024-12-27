@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types'; // Import PropTypes
-import { IoIosArrowDown } from 'react-icons/io';
-import styles from './Footer.module.css';
 import useMediaQuery from '../../hooks/useMediaQuery';
+import styles from './Footer.module.css';
 
 export default function Footer(props) {
   const { scrollToSection, activeSection } = props;

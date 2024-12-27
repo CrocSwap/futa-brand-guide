@@ -1,9 +1,11 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
-import FadingTextGrid from '../../Animations/FadingTextGrid';
 
-import styles from './FutaNewLanding.module.css';
+import FadingTextGrid from '../../animations/FadingTextGrid';
 import Footer from '../../components/footer/Footer';
 import FutaSection1 from '../FutaSection1';
+import FutaSection10 from '../FutaSection10/FutaSection10';
+import FutaSection11 from '../FutaSection11/FutaSection11';
+import FutaSection12 from '../FutaSection12/FutaSection12';
 import FutaSection2 from '../FutaSection2';
 import FutaSection3 from '../FutaSection3';
 import FutaSection4 from '../FutaSection4';
@@ -12,9 +14,7 @@ import FutaSection6 from '../FutaSection6';
 import FutaSection7 from '../FutaSection7';
 import FutaSection8 from '../FutaSection8';
 import FutaSection9 from '../FutaSection9/FutaSection9';
-import FutaSection11 from '../FutaSection11/FutaSection11';
-import FutaSection10 from '../FutaSection10/FutaSection10';
-import FutaSection12 from '../FutaSection12/FutaSection12';
+import styles from './FutaNewLanding.module.css';
 
 const INITIAL_DELAY = 7000;
 const TOTAL_SECTIONS = 5;

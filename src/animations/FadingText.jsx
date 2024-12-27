@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types'; // Import PropTypes for validation
+import { useEffect, useState } from 'react';
 import styles from './FadingText.module.css';
 
 const FadingText = ({
