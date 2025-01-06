@@ -6,8 +6,10 @@ import styles from './Sections.module.css';
 export default function FutaSection4() {
   return (
     <div className={styles.main} >
-
-          <ImageDisplay image={section4First} image2={section4Second} />
+   <div className={styles.mainColumn}>
+   <p>Mark / Monochrome</p>
+        <ImageDisplay image={section4First} image2={section4Second} imageName='markMonochrome'/>
+        </div>
     </div>
   );
 }

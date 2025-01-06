@@ -14,7 +14,7 @@ import wordColor from '../../assets/images/section7Image.svg';
 import wordMonochrome01 from '../../assets/images/section8FirstImage.svg';
 import wordMonochrome02 from '../../assets/images/section8SecondImage.svg';
 export default function ImageDisplay(props) {
-  const { image, image2, zipDownload } = props;
+  const { image, image2, zipDownload, imageName } = props;
 
   const images = [
     { name: 'fullLogo.svg', url: fullLogo },
@@ -68,18 +68,23 @@ export default function ImageDisplay(props) {
     });
   };
 
-  // Function to download an image
-  const downloadImage = (src, filename) => {
-    // Create a temporary anchor element
+  const downloadImage = async (src, filename) => {
+    const response = await fetch(src);
+    const blob = await response.blob();
+    const url = URL.createObjectURL(blob);
+  
     const link = document.createElement('a');
-    link.href = src;
+    link.href = url;
     link.download = filename || 'downloaded-image';
-
-    // Append to the body, click, and remove
+  
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
+  
+    // Clean up the object URL
+    URL.revokeObjectURL(url);
   };
+  
 
   // Function to generate filename
   const generateFilename = (src) => {
@@ -95,7 +100,7 @@ export default function ImageDisplay(props) {
           <img src={image} alt='' className={styles.img1} />
           <button
             className={styles.downloadButton}
-            onClick={() => downloadImage(image, generateFilename(image))}
+            onClick={() => downloadImage(image, imageName)}
           >
             download
             <BsDownload />
@@ -106,7 +111,7 @@ export default function ImageDisplay(props) {
           <img src={image2} alt='' className={styles.img2} />
           <button
             className={styles.downloadButton}
-            onClick={() => downloadImage(image, generateFilename(image))}
+            onClick={() => downloadImage(image, imageName + 'white')}
           >
             download
             <BsDownload />
@@ -125,7 +130,7 @@ export default function ImageDisplay(props) {
           onClick={
             zipDownload
               ? () => downloadZip() // Pass a function reference
-              : () => downloadImage(image, generateFilename(image)) // Pass a function reference
+              : () => downloadImage(image, imageName) // Pass a function reference
           }
         >
           download
@@ -139,5 +144,6 @@ export default function ImageDisplay(props) {
 ImageDisplay.propTypes = {
   image: PropTypes.string.isRequired,
   image2: PropTypes.string.isRequired,
+  imageName: PropTypes.string.isRequired,
   zipDownload: PropTypes.boolean,
 };

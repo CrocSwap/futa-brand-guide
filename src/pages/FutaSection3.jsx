@@ -4,9 +4,11 @@ import styles from './Sections.module.css';
 
 export default function FutaSection3() {
   return (
-    <div className={styles.main} >
-
-      <ImageDisplay image={section3} />
+    <div className={styles.main}>
+      <div className={styles.mainColumn}>
+        <p>Mark / Color</p>
+        <ImageDisplay image={section3} imageName={'markColor'} />
+      </div>
     </div>
   );
 }
