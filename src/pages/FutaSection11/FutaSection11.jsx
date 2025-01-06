@@ -6,8 +6,9 @@ export default function FutaSection11() {
     
     return (
         <div className={styles.main}>
-
-            
+           
+            <div className={styles.mainColumn}>
+        <p>Clear space</p>
             <div className={styles.content}>
                 <img src={image1} alt="" className={styles.img1}/>
                 <div className={styles.contentColumn}>
@@ -16,6 +17,7 @@ export default function FutaSection11() {
 
 
                 </div>
+            </div>
 
             </div>
         </div>

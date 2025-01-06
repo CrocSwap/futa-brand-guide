@@ -13,7 +13,7 @@ export default function FutaSection9() {
     return (
 
         <div className={styles.container}>
-            <h2>Core colors</h2>
+            <h2>Core colors (Click to copy)</h2>
             <div className={styles.content}>
                 {[
                     { label: 'ACCENT1', hash: 'AACFD1' },
